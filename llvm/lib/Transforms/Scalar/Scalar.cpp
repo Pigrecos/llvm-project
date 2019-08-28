@@ -183,6 +183,10 @@ void LLVMAddLoopRotatePass(LLVMPassManagerRef PM) {
   unwrap(PM)->add(createLoopRotatePass());
 }
 
+void LLVMAddLoopInstSimplifyPass(LLVMPassManagerRef PM){
+	unwrap(PM)->add(createLoopInstSimplifyPass());
+}
+
 void LLVMAddLoopRerollPass(LLVMPassManagerRef PM) {
   unwrap(PM)->add(createLoopRerollPass());
 }

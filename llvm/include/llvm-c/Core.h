@@ -3332,6 +3332,22 @@ void LLVMSetUnwindDest(LLVMValueRef InvokeInst, LLVMBasicBlockRef B);
  *
  * @see llvm::Instruction::getNumSuccessors
  */
+
+ 
+ /**
+ * Return a pointer to the next non-debug instruction in the same basic block as 'this', or nullptr if no such instruction exists.
+ *
+ * @see llvm::Instruction::getNextNonDebugInstruction // Add by Pigreco  
+ */
+LLVMValueRef LLVMgetNextNonDebugInstruction(LLVMValueRef Istruz);
+
+/**
+* Return a pointer to the next non-debug instruction in the same basic block as 'this', or nullptr if no such instruction exists.
+*
+* @see llvm::Instruction::PrevNonDebugInstruction // Add by Pigreco
+*/
+LLVMValueRef LLVMgetPrevNonDebugInstruction(LLVMValueRef Istruz);
+
 unsigned LLVMGetNumSuccessors(LLVMValueRef Term);
 
 /**

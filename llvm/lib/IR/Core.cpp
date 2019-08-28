@@ -2880,6 +2880,14 @@ void LLVMSetUnwindDest(LLVMValueRef Invoke, LLVMBasicBlockRef B) {
 
 /*--.. Operations on terminators ...........................................--*/
 
+LLVMValueRef LLVMgetNextNonDebugInstruction(LLVMValueRef Istruz) {
+	return wrap(unwrap<Instruction>(Istruz)->getNextNonDebugInstruction());
+}
+
+LLVMValueRef LLVMgetPrevNonDebugInstruction(LLVMValueRef Istruz) {
+	return wrap(unwrap<Instruction>(Istruz)->getPrevNonDebugInstruction());
+}
+
 unsigned LLVMGetNumSuccessors(LLVMValueRef Term) {
   return unwrap<Instruction>(Term)->getNumSuccessors();
 }

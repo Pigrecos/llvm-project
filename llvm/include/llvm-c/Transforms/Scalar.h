@@ -83,6 +83,9 @@ void LLVMAddLoopRotatePass(LLVMPassManagerRef PM);
 /** See llvm::createLoopRerollPass function. */
 void LLVMAddLoopRerollPass(LLVMPassManagerRef PM);
 
+/** See llvm::createLoopInstSimplifyPass function - Modified by Pigreco */
+void LLVMAddLoopInstSimplifyPass(LLVMPassManagerRef PM);
+
 /** See llvm::createLoopUnrollPass function. */
 void LLVMAddLoopUnrollPass(LLVMPassManagerRef PM);
 
