@@ -2381,6 +2381,12 @@ void LLVMAddAttributeAtIndex(LLVMValueRef F, LLVMAttributeIndex Idx,
   unwrap<Function>(F)->addAttribute(Idx, unwrap(A));
 }
 
+void LLVMAddAttributeKindAtIndex(LLVMValueRef F, 
+	                             LLVMAttributeIndex Idx,
+	                             unsigned KindID) {
+	unwrap<Function>(F)->addAttribute(Idx, (Attribute::AttrKind)KindID);
+}
+
 unsigned LLVMGetAttributeCountAtIndex(LLVMValueRef F, LLVMAttributeIndex Idx) {
   auto AS = unwrap<Function>(F)->getAttributes().getAttributes(Idx);
   return AS.getNumAttributes();

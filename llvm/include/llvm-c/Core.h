@@ -2505,6 +2505,15 @@ void LLVMSetGC(LLVMValueRef Fn, const char *Name);
  */
 void LLVMAddAttributeAtIndex(LLVMValueRef F, LLVMAttributeIndex Idx,
                              LLVMAttributeRef A);
+
+/**
+* Add an attribute to a function. modified by Pigrecos
+*
+* @see llvm::Function::addAttribute()
+*/
+void LLVMAddAttributeKindAtIndex(LLVMValueRef F,
+	                             LLVMAttributeIndex Idx,
+	                             unsigned KindID);
 unsigned LLVMGetAttributeCountAtIndex(LLVMValueRef F, LLVMAttributeIndex Idx);
 void LLVMGetAttributesAtIndex(LLVMValueRef F, LLVMAttributeIndex Idx,
                               LLVMAttributeRef *Attrs);
